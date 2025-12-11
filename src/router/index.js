@@ -17,6 +17,7 @@ const router = createRouter({
     {
       path: '/admin',
       component: AdminLayout,
+      redirect: '/admin/adminMain',
       meta: { requiresAuth: true, role: 'admin' },
       children: [
         {
@@ -53,6 +54,10 @@ const router = createRouter({
     },
 
     // 기사 페이지 ===================================
+    {
+      path: '/worker',
+      redirect: '/worker/workerMain',
+    },
     {
       path: '/worker/workerMain',
       component: () => import('../layouts/workerLayout.vue'),
