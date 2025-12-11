@@ -16,10 +16,10 @@ const router = createRouter({
     {
       path: '/admin',
       component: AdminLayout,
-      redirect: '/admin/adminMain',
+      redirect: '/admin/adminmain',
       children: [
         {
-          path: 'adminMain',
+          path: 'adminmain',
           name: 'adminMain',
           component: () => import('../pages/admin/AdminMain.vue'),
           meta: { title: '대시보드' },
@@ -54,10 +54,10 @@ const router = createRouter({
     // 기사 페이지 ===================================
     {
       path: '/worker',
-      redirect: '/worker/workerMain',
+      redirect: '/worker/workermain',
     },
     {
-      path: '/worker/workerMain',
+      path: '/worker/workermain',
       component: () => import('../layouts/workerLayout.vue'),
       children: [
         {
