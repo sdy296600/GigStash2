@@ -27,7 +27,9 @@
       "Bash(cat:*)",
       "Bash(git pull:*)",
       "Bash(findstr:*)",
-      "Bash(git remote remove:*)"
+      "Bash(git remote remove:*)",
+      "Bash(git push)",
+      "Bash(git remote set-url:*)"
     ],
     "deny": [],
     "ask": []
