@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tree:*)",
+      "Bash(node scripts/migrate-to-firestore.js:*)",
+      "Bash(node scripts/update-locker-locations.js:*)",
+      "Bash(node scripts/migrate-to-firestore-clean.js:*)",
+      "Bash(node scripts/generate-lockers-50-per-vehicle.js:*)",
+      "Bash(node scripts/generate-customers-550.js:*)",
+      "Bash(node scripts/generate-reservations-extra.js:*)",
+      "Bash(node scripts/fix-reservation-statuses.js:*)",
+      "Bash(node -e:*)",
+      "Bash(node scripts/normalize-data.js:*)",
+      "Bash(node:*)",
+      "Bash(npm run build:*)",
+      "Bash(dir:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(npm run data:validate:*)",
+      "Bash(npm run data:test:*)",
+      "Bash(git fetch:*)",
+      "Bash(npm run dev:*)",
+      "Bash(timeout:*)",
+      "Bash(del test-vehicle-structure.js)",
+      "Bash(git restore:*)",
+      "Bash(git reset:*)",
+      "Bash(cat:*)",
+      "Bash(git pull:*)",
+      "Bash(findstr:*)",
+      "Bash(git remote remove:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
