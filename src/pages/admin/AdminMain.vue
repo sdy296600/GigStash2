@@ -1,7 +1,5 @@
 <template>
   <div class="px-6 bg-slate-50 dark:bg-slate-900 h-[calc(100vh-130px)] scrollbar-hide">
-    <!-- <h1 class="text-3xl font-bold mb-8" style="color: #1e293b">Main Home</h1> -->
-
     <!-- 전체 공지 사항 ===============================================================-->
     <div class="mb-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
       <section class="flex flex-col">

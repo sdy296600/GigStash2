@@ -29,7 +29,11 @@
       "Bash(findstr:*)",
       "Bash(git remote remove:*)",
       "Bash(git push)",
-      "Bash(git remote set-url:*)"
+      "Bash(git remote set-url:*)",
+      "Bash(del \"d:\\SDY\\project\\GigStash\\src\\pages\\admin\\AdminMain copy.vue\")",
+      "Bash(del \"d:\\SDY\\project\\GigStash\\src\\pages\\admin\\ReservationView copy.vue\")",
+      "Bash(del \"d:\\SDY\\project\\GigStash\\src\\stores\\dataStore copy.js\")",
+      "Bash(del \"d:\\SDY\\project\\GigStash\\src\\pages\\worker\\LoginWorker.vue\")"
     ],
     "deny": [],
     "ask": []

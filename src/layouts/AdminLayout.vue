@@ -74,29 +74,6 @@
             <span v-if="!isSidebarCollapsed" class="hidden lg:block flex-1">{{ item.label }}</span>
           </transition>
         </RouterLink>
-
-        <!-- <div class="h-px bg-gray-200 dark:bg-slate-700 mx-3 my-2"></div> -->
-
-        <!-- <RouterLink
-          v-for="item in secondaryMenuItems"
-          :key="item.path"
-          :to="item.path"
-          :class="[
-            'flex items-center gap-3 px-3 py-2.5 mx-2 my-0.5 rounded-lg',
-            'text-gray-700 dark:text-slate-300 font-medium transition-all duration-150 whitespace-nowrap',
-            'hover:bg-blue-50 dark:hover:bg-slate-700/50',
-            'hover:text-blue-600 dark:hover:text-blue-400',
-            isSidebarCollapsed ? 'lg:justify-center lg:px-2' : '',
-          ]"
-          active-class="!bg-blue-600 !text-white dark:!bg-blue-600"
-        >
-          active-class="!bg-gradient-to-r !from-blue-600 !to-cyan-500 dark:!from-cyan-500 dark:!to-blue-600 !text-white !shadow-lg !shadow-blue-500/50 dark:!shadow-cyan-500/30"  
-          <span class="text-xl flex-shrink-0"><i :class="[item.icon, ``]"></i></span>
-          <span class="flex-1 block lg:hidden">{{ item.label }}</span>
-          <transition name="fade">
-            <span v-if="!isSidebarCollapsed" class="hidden lg:block flex-1">{{ item.label }}</span>
-          </transition>
-        </RouterLink>  -->
       </nav>
     </aside>
 
@@ -129,27 +106,8 @@
             </h1>
           </div>
 
-          <!-- 헤더 오른쪽: 서치 + 다크모드 + 유저 프로필 -->
+          <!-- 헤더 오른쪽: 다크모드 + 유저 프로필 -->
           <div class="flex items-center gap-4">
-            <!-- 검색 박스 -->
-            <!-- <div
-              class="hidden md:flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-slate-700 rounded-full"
-            >
-              <i class="fi fi-br-search text-gray-600 dark:text-gray-300"></i>
-              <input
-                type="text"
-                placeholder="메뉴 검색"
-                class="bg-transparent text-sm placeholder-gray-500 dark:placeholder-gray-400 outline-none w-40 text-gray-900 dark:text-white text-right"
-              />
-            </div> -->
-
-            <!-- 알림 아이콘 -->
-            <!-- <button
-              class="relative p-2 hover:bg-gray-200 dark:hover:bg-slate-700 rounded-lg transition-all text-gray-600 dark:text-gray-300"
-            >
-              <i class="fi fi-rr-bell text-xl"></i>
-            </button> -->
-
             <!-- 프로필 영역 -->
             <div class="relative">
               <button
@@ -157,9 +115,6 @@
                 @click="isProfileMenuOpen = !isProfileMenuOpen"
                 class="flex items-center gap-2 px-3 py-2 hover:bg-gray-200 dark:hover:bg-slate-700 rounded-lg transition-all text-gray-700 dark:text-gray-300"
               >
-                <!-- <p class="text-xs text-gray-600 dark:text-gray-400">
-                  {{ authStore.user?.email || 'admin@example.com' }}
-                </p> -->
                 <span class="text-xl">
                   <div
                     class="w-7 h-7 text-lg rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-blue-600 dark:text-blue-300"
@@ -259,19 +214,15 @@ const menuItems = [
     icon: 'fi fi-rr-dashboard-panel',
     label: '모니터링',
   },
-]
-const secondaryMenuItems = [
-  {
-    name: 'adminComponentDemo',
-    path: '/admin/demo',
-    icon: 'fi fi-rr-settings',
-    label: '컴포넌트 데모',
-  },
+  // {
+  //   name: 'adminComponentDemo',
+  //   path: '/admin/demo',
+  //   icon: 'fi fi-rr-settings',
+  //   label: '컴포넌트 데모',
+  // },
 ]
 
-// menuItems과 secondaryMenuItems을 통합하여 route.name -> label 매핑
-const allMenuItems = [...menuItems, ...secondaryMenuItems]
-const menuLabelsMap = Object.fromEntries(allMenuItems.map((item) => [item.name, item.label]))
+const menuLabelsMap = Object.fromEntries(menuItems.map((item) => [item.name, item.label]))
 
 const toggleSidebar = () => {
   // 화면 크기 체크
@@ -287,22 +238,11 @@ const toggleSidebar = () => {
   }
 }
 
-// // 데스크탑용 사이드바 토글 버튼용 함수
-// const toggleSidebarDesktop = () => {
-//   isSidebarCollapsed.value = !isSidebarCollapsed.value
-//   localStorage.setItem('sidebarCollapsed', isSidebarCollapsed.value)
-// }
-
 const closeMobileMenu = () => {
   isMobileMenuOpen.value = false
 }
 
-//직접 프로필 메뉴 닫기
-const closeProfileMenu = () => {
-  isProfileMenuOpen.value = false
-}
-//================
-//프로필 외부 클릭 감지
+// 프로필 외부 클릭 감지
 const handleClickOutside = (event) => {
   // 프로필 버튼이나 드롭다운 메뉴 내부를 클릭한 경우 무시
   if (
@@ -324,14 +264,8 @@ onMounted(() => {
 onBeforeUnmount(() => {
   document.removeEventListener('click', handleClickOutside)
 })
-//==========`========
-
-const collapseButtonTitle = computed(() =>
-  isSidebarCollapsed.value ? '사이드바 펼치기' : '사이드바 접기',
-)
 
 const pageTitle = computed(() => {
-  console.log('route.name:' + route.name)
   return menuLabelsMap[route.name] || ''
 })
 

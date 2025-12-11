@@ -49,10 +49,6 @@
       >
         <div class="text-lg font-bold text-gray-900 dark:text-white mb-3">내 근무 일정</div>
         <div class="space-y-3">
-          <!-- <div class="flex justify-between items-center">
-            <span class="text-sm text-gray-600 dark:text-gray-400">오늘 행사</span>
-            <span class="text-base text-gray-900 dark:text-white">{{ todayScheduleCount }}건</span>
-          </div> -->
           <div class="flex justify-between items-center">
             <span class="text-sm text-gray-600 dark:text-gray-400">이번 주 행사</span>
             <span class="text-base text-gray-900 dark:text-white">{{ weekScheduleCount }}건</span>

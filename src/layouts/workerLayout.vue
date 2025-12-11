@@ -93,10 +93,6 @@ const goToHome = () => {
   router.push({ name: 'WorkerWork' })
 }
 
-const goToProfile = () => {
-  router.push({ name: 'WorkerSettings' })
-}
-
 // 현재 라우트가 특정 경로와 일치하는지 확인
 const isActiveRoute = (path) => {
   return route.path === path
