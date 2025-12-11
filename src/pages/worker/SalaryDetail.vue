@@ -85,7 +85,7 @@
                   'aspect-square p-1 rounded-lg text-center flex items-center justify-center relative',
                   date.isCurrentMonth
                     ? date.isToday
-                      ? 'bg-transparent'
+                      ? 'bg-green-100 dark:bg-green-900/20 hover:bg-green-200 dark:hover:bg-green-900/30 cursor-pointer'
                       : date.hasWork
                         ? 'bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 dark:hover:bg-blue-900/30 cursor-pointer'
                         : 'hover:bg-gray-100 dark:hover:bg-gray-800'
@@ -95,18 +95,14 @@
                 <div
                   :class="[
                     'w-full h-full flex flex-col items-center justify-center',
-                    date.isToday
-                      ? 'rounded-full bg-white ring-1 ring-blue-200 shadow-md text-[var(--gray-900,#1E293B)] dark:bg-slate-800 dark:ring-blue-500/50 dark:shadow-none'
-                      : '',
+                    date.isToday ? 'text-green-800 dark:text-green-200' : '',
                   ]"
                 >
                   <span
                     :class="[
                       'text-sm font-medium',
                       date.isCurrentMonth
-                        ? date.isToday
-                          ? 'text-[var(--gray-900,#1E293B)]'
-                          : 'text-gray-900 dark:text-white'
+                        ? 'text-gray-900 dark:text-white'
                         : 'text-gray-300 dark:text-gray-600',
                     ]"
                   >
@@ -116,11 +112,15 @@
                     v-if="date.hasWork && date.isCurrentMonth"
                     :class="[
                       'text-[9px] font-medium mt-0.5 leading-tight',
-                      date.isToday ? 'text-[var(--gray-900,#1E293B)]' : 'text-blue-600 dark:text-blue-400',
+                      date.isToday ? 'text-green-800 dark:text-green-200' : 'text-blue-600 dark:text-blue-400',
                     ]"
                   >
                     {{ formatCurrencyCompact(date.salary) }}
                   </span>
+                  <span
+                    v-else-if="date.isToday && date.isCurrentMonth"
+                    class="mt-1 w-2 h-2 rounded-full bg-green-500"
+                  ></span>
                 </div>
               </div>
             </div>

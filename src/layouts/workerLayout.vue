@@ -63,7 +63,7 @@
           <i class="fi fi-rr-home text-[27px] leading-none"></i>
         </router-link>
 
-        <!-- 마이페이지 -->
+        <!-- 마이페이지 --->
         <router-link
           to="/worker/workerMain/settings"
           :class="[

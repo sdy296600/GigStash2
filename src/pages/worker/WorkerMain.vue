@@ -18,7 +18,7 @@
     <!-- 위치 정보 카드 -->
     <div
       v-if="assignedEventInfo"
-      class="bg-white dark:bg-gray-800 dark:border dark:border-gray-700 rounded-2xl shadow-sm mx-4 p-5"
+      class="bg-white dark:bg-gray-800 dark:border dark:border-gray-700 rounded-2xl shadow-sm mx-4 p-6 min-h-[120px]"
     >
       <div class="text-base text-gray-900 dark:text-white mb-3">
         {{ assignedEventInfo.venue }}
@@ -31,16 +31,16 @@
     </div>
     <div
       v-else
-      class="bg-white dark:bg-gray-800 dark:border dark:border-gray-700 rounded-2xl shadow-sm mx-4 p-5"
+      class="bg-white dark:bg-gray-800 dark:border dark:border-gray-700 rounded-2xl shadow-sm mx-4 p-6 min-h-[120px]"
     >
       <div class="text-base text-gray-900 dark:text-white text-center">오늘은 일정이 없습니다</div>
     </div>
 
-    <!-- 지도 섹션 -->
+    <!-- 지도 섹션: 헤더 아래부터 하단 탭 전까지 채우기 -->
     <div class="mx-4 mt-4 relative">
       <div
         class="bg-white dark:bg-gray-800 dark:border dark:border-gray-700 rounded-2xl shadow-sm overflow-hidden"
-        style="height: 400px"
+        style="height: 300px"
       >
         <!-- 카카오 맵 영역 -->
         <div id="kakao-map" class="w-full h-full relative">
@@ -454,13 +454,13 @@
     <Teleport to="body">
       <div
         v-if="showParkingModal"
-        class="fixed top-[68px] bottom-[72px] left-1/2 -translate-x-1/2 w-full max-w-[480px] z-30"
+        class="fixed top-[68px] bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] z-40"
       >
         <!-- 모달 컨텐츠 (헤더와 하단 탭 바를 고려한 높이) -->
         <div class="w-full h-full bg-white dark:bg-gray-900 overflow-hidden flex flex-col">
           <!-- 헤더 -->
           <div
-            class="flex-shrink-0 bg-white dark:bg-gray-900 px-4 py-2 flex justify-between items-center border-b border-gray-100 dark:border-gray-800 z-10"
+            class="flex-shrink-0 bg-white dark:bg-gray-900 px-5 py-3 flex justify-between items-center border-b border-gray-100 dark:border-gray-800 z-10 min-h-[56px]"
           >
             <div class="flex items-center gap-2">
               <h2 class="text-base font-bold text-gray-900 dark:text-white">주차 장소</h2>
